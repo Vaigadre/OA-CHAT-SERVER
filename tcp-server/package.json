@@ -1,0 +1,11 @@
+{
+  "name": "tcp-server",
+  "version": "1.0.0",
+  "description": " TCP server which will listen to TCP connections from IoT devices.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vaibhav Gadre",
+  "license": "ISC"
+}
