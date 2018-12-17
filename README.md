@@ -4,8 +4,8 @@ machine to machine chat communication server for IoT applications.
 
 ## Run chat api server
 
-- Go to cha-api-server folder
-- Install depedencies: Run `npm install`
+- Go to chat-api-server folder
+- Install dependencies: Run `npm install`
 - Start server: Run `npm run start`
 - Create data and logs inside DB
 - Run mongodb server using mongod.
