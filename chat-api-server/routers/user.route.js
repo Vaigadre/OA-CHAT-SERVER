@@ -34,4 +34,5 @@ router.put("/:userId", async (req, res) => {
     sendRes(res, serverError(error));
   }
 });
+
 module.exports = router;

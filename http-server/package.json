@@ -1,7 +1,7 @@
 {
-  "name": "tcp-server",
+  "name": "http-server",
   "version": "1.0.0",
-  "description": " TCP server which will listen to TCP connections from IoT devices.",
+  "description": " HTTP server which will listen to HTTP connections from client computers.",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

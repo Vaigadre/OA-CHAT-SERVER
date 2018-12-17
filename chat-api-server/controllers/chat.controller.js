@@ -2,6 +2,9 @@ const responseBuilder = require("../util/response-builder");
 const chatService = require("../services/chat.service");
 const messageController = require("../controllers/message.controller");
 
+/**
+ * Get chat history for pair of clients from chatId.
+ */
 module.exports.getChatHistory = async function(chatId) {
   const chat = await messageController.getChatMessages(chatId);
   if (!chat.length) {
@@ -12,6 +15,7 @@ module.exports.getChatHistory = async function(chatId) {
   return responseBuilder.successRes({ data: chat });
 };
 
+/** Save conversation for pair of clients */
 module.exports.saveChat = async function(reqBody) {
   const participants = [reqBody.clientId, reqBody.userId];
 
@@ -45,6 +49,7 @@ module.exports.saveChat = async function(reqBody) {
   });
 };
 
+/**Delete conversation history fo pair of clients */
 module.exports.deleteChat = async function(chatId) {
   const deleteMessages = await messageController.deleteChatMessages(chatId);
   const removedChat = await chatService.delete(chatId);

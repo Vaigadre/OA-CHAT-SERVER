@@ -8,7 +8,7 @@ var PORT = "3001";
 var server = net.createServer(onClientConnected);
 
 server.listen(PORT, HOST, function() {
-  console.log("server listening on %j", server.address());
+  console.log(`server listening on ${HOST}:${PORT}`);
 });
 
 function onClientConnected(sock) {
@@ -16,14 +16,14 @@ function onClientConnected(sock) {
   console.log("new client connected: %s", remoteAddress);
 
   sock.on("data", function(data) {
-    console.log("%s Says: %s", remoteAddress, data);
+    console.log(`${remoteAddress} Says: ${data}`);
     sock.write(data);
     sock.write(" exit");
   });
   sock.on("close", function() {
-    console.log("connection from %s closed", remoteAddress);
+    console.log(`connection from ${remoteAddress} closed`);
   });
   sock.on("error", function(err) {
-    console.log("Connection %s error: %s", remoteAddress, err.message);
+    console.log(`Connection ${remoteAddress} error: ${err.message}`);
   });
 }
